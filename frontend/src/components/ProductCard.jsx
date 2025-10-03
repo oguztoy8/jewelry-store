@@ -98,7 +98,10 @@ const ProductCard = ({ product }) => {
           {colors.map((color) => (
             <button
               key={color}
-              onClick={() => setSelectedColor(color)}
+              onClick={(e) => {
+                e.stopPropagation(); // carousel swipe olayını engeller
+                setSelectedColor(color);
+              }}
               className={`w-5 h-5 rounded-full border transition-all ${
                 selectedColor === color
                   ? 'border-gray-800 ring-1 ring-offset-1 ring-gray-400'
