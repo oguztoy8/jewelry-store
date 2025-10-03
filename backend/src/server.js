@@ -55,7 +55,7 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`🚀 Server is running on port ${PORT}`);
-  console.log(`📍 Health check: http://localhost:${PORT}/api/health`);
-  console.log(`📦 Products API: http://localhost:${PORT}/api/products`);
+  console.log(` Server is running on port ${PORT}`);
+  console.log(` Health check: http://localhost:${PORT}/api/health`);
+  console.log(` Products API: http://localhost:${PORT}/api/products`);
 });
