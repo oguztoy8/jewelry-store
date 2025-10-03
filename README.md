@@ -1,5 +1,6 @@
 # Jewelry Store - Product Listing Application
 
+![Uploading image.png…]()
 
 
 
@@ -51,7 +52,7 @@ npm run dev
 npm start
 ```
 
-Backend lokalde şu adreste çalışacaktır: `http://localhost:5000`
+Backend lokalde port 5000 e ayarlandıysa şu adreste çalışacaktır: `http://localhost:5000`
 
 ### Frontend Kurulumu
 
@@ -75,14 +76,7 @@ VITE_API_URL=http://localhost:5000/api
 npm run dev
 ```
 
-Frontend şu adreste çalışacaktır: `http://localhost:3000`
 
 
 
-
-1. Fork edin
-2. Feature branch oluşturun (`git checkout -b feature/amazing-feature`)
-3. Değişikliklerinizi commit edin (`git commit -m 'Add amazing feature'`)
-4. Branch'inizi push edin (`git push origin feature/amazing-feature`)
-5. Pull Request oluşturun
 
