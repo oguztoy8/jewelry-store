@@ -8,8 +8,9 @@ const ProductCarousel = ({ products }) => {
   const carouselRef = useRef(null);
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
+  const touchStartY = useRef(0);
 
-  // Responsive items per view
+  
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 640) {
@@ -38,22 +39,32 @@ const ProductCarousel = ({ products }) => {
     setCurrentIndex((prev) => Math.min(maxIndex, prev + 1));
   };
 
-  // Touch handlers for swipe
+  
   const handleTouchStart = (e) => {
     touchStartX.current = e.touches[0].clientX;
+    touchEndX.current = e.touches[0].clientX;
+    touchStartY.current = e.touches[0].clientY;
   };
 
   const handleTouchMove = (e) => {
     touchEndX.current = e.touches[0].clientX;
   };
 
-  const handleTouchEnd = () => {
-    const diff = touchStartX.current - touchEndX.current;
-    const threshold = 50;
+  const handleTouchEnd = (e) => {
+    const diffX = touchStartX.current - touchEndX.current;
+    const diffY = Math.abs(e.changedTouches[0].clientY - touchStartY.current);
 
-    if (diff > threshold) {
+    const threshold = 70; 
+    const verticalLimit = 50; 
+
+   
+    if (diffY > verticalLimit) {
+      return;
+    }
+
+    if (diffX > threshold) {
       handleNext();
-    } else if (diff < -threshold) {
+    } else if (diffX < -threshold) {
       handlePrev();
     }
   };
@@ -75,7 +86,7 @@ const ProductCarousel = ({ products }) => {
     const x = e.pageX - carouselRef.current.offsetLeft;
     const walk = (x - startX) * 2;
     const newScrollLeft = scrollLeft - walk;
-    
+
     if (Math.abs(walk) > 50) {
       if (walk > 0) {
         handleNext();
