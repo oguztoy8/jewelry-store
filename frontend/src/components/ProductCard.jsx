@@ -99,8 +99,11 @@ const ProductCard = ({ product }) => {
             <button
               key={color}
               onClick={(e) => {
-                e.stopPropagation(); // carousel swipe olayını engeller
+                e.stopPropagation(); 
                 setSelectedColor(color);
+              }}
+              onTouchStart={(e) => {
+                e.stopPropagation(); // mobil swipe olayını engeller
               }}
               className={`w-5 h-5 rounded-full border transition-all ${
                 selectedColor === color
