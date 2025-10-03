@@ -17,7 +17,7 @@
 - **Tailwind CSS** - CSS framework
 - **Lucide React** - İkonlar
 
-## 📦 Kurulum
+## Kurulum
 
 ### Gereksinimler
 - Node.js (v16 veya üzeri)
