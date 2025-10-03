@@ -1,6 +1,5 @@
 # Jewelry Store - Product Listing Application
 
-![Uploading image.png…]()
 
 
 
